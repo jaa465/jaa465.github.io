@@ -1,0 +1,807 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Juline Arthur | Marketing Portfolio</title>
+  <meta name="description" content="Juline Arthur's professional portfolio featuring marketing strategy, brand development, consumer behavior, and creative campaigns.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #faf8f4;
+      --white: #ffffff;
+      --black: #252321;
+      --muted: #77716d;
+      --pink: #d7a7a5;
+      --light-pink: #f2e5e2;
+      --line: #e8e2dc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--black);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 88%);
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(250, 248, 244, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .nav-links a:hover,
+    .text-link:hover {
+      color: #a66e6c;
+    }
+
+    /* Hero / Personal Statement */
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      padding: 100px 0 110px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: #a66e6c;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.73rem;
+      font-weight: 700;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      max-width: 850px;
+      margin: 22px 0;
+      letter-spacing: -2px;
+    }
+
+    h1 em {
+      color: #b78380;
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 1px solid var(--black);
+      border-radius: 3px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--black);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #a66e6c;
+      border-color: #a66e6c;
+    }
+
+    .button-secondary:hover {
+      background: var(--light-pink);
+    }
+
+    /* Shared sections */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.3rem, 5vw, 3.5rem);
+      margin-top: 10px;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 0.88rem;
+      max-width: 290px;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-copy {
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .about-copy p + p {
+      margin-top: 18px;
+    }
+
+    .about-details {
+      border-top: 1px solid var(--line);
+    }
+
+    .detail {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+
+    .detail span:first-child {
+      color: var(--muted);
+    }
+
+    .detail span:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
+    /* Skills */
+
+    #skills {
+      background: var(--light-pink);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.72);
+      padding: 27px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+    .skill-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 6px 11px;
+      font-size: 0.76rem;
+      border-radius: 2px;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      border: 1px solid var(--line);
+      background: var(--white);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(37, 35, 33, 0.06);
+    }
+
+    .project-cover {
+      min-height: 210px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .cover-one {
+      background: #f0e2df;
+    }
+
+    .cover-two {
+      background: #e3e8df;
+    }
+
+    .cover-three {
+      background: #eee6d8;
+    }
+
+    .cover-four {
+      background: #e6e1ed;
+    }
+
+    .cover-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .cover-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      max-width: 350px;
+    }
+
+    .cover-subtitle {
+      font-size: 0.78rem;
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+
+    .project-content {
+      padding: 27px;
+    }
+
+    .project-type {
+      color: #a66e6c;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .project-content h3 {
+      font-size: 1.65rem;
+      margin: 10px 0;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .text-link {
+      font-size: 0.83rem;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Contact */
+
+    #contact {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+    }
+
+    #contact .eyebrow {
+      color: var(--pink);
+    }
+
+    #contact h2 {
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
+      margin: 18px 0;
+    }
+
+    #contact p {
+      color: #d0cbc7;
+      max-width: 500px;
+      margin: 0 auto 28px;
+    }
+
+    #contact .button {
+      border-color: var(--pink);
+      color: white;
+    }
+
+    #contact .button:hover {
+      background: #a66e6c;
+      border-color: #a66e6c;
+    }
+
+    footer {
+      padding: 22px 0;
+      background: var(--black);
+      color: #aaa39e;
+      border-top: 1px solid #45413e;
+      font-size: 0.78rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* Mobile layout */
+
+    @media (max-width: 720px) {
+      .nav-links {
+        gap: 13px;
+        font-size: 0.78rem;
+      }
+
+      .logo {
+        font-size: 1.1rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 85px 0;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .about-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .about-grid {
+        gap: 35px;
+      }
+
+      .project-cover {
+        min-height: 190px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      nav {
+        align-items: flex-start;
+        padding: 18px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="#home" class="logo">Juline Arthur.</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. PERSONAL STATEMENT -->
+
+    <section class="hero" id="home">
+      <div class="container">
+        <p class="eyebrow">Marketing · Creativity · Strategy</p>
+
+        <h1>Turning creative ideas into <em>meaningful connections.</em></h1>
+
+        <p class="hero-description">
+          I am Juline Arthur, a Rutgers University marketing student and
+          licensed New Jersey cosmetologist passionate about understanding
+          consumer behavior, building memorable brands, and creating marketing
+          strategies that connect businesses with their audiences.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="button button-primary" href="#projects">
+            Explore My Work ↗
+          </a>
+          <a class="button button-secondary" href="#contact">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A little about me</p>
+            <h2>Strategy meets creativity.</h2>
+          </div>
+          <p class="section-note">
+            Blending analytical thinking with a creative perspective.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              My interest in marketing comes from understanding what makes
+              people connect with a brand. Through my business education and
+              cosmetology background, I have developed an appreciation for
+              customer experience, visual storytelling, and the power of
+              effective communication.
+            </p>
+
+            <p>
+              I am especially interested in brand strategy, digital marketing,
+              consumer insights, and creative campaigns. My goal is to create
+              thoughtful marketing experiences that help brands build
+              authentic, lasting relationships with their audiences.
+            </p>
+          </div>
+
+          <div class="about-details">
+            <div class="detail">
+              <span>Education</span>
+              <span>Rutgers University</span>
+            </div>
+            <div class="detail">
+              <span>Field of Study</span>
+              <span>Marketing</span>
+            </div>
+            <div class="detail">
+              <span>Background</span>
+              <span>Business & Cosmetology</span>
+            </div>
+            <div class="detail">
+              <span>Interests</span>
+              <span>Branding, Beauty & Digital Media</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SKILLS -->
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What I bring to the table</p>
+            <h2>My skill set.</h2>
+          </div>
+          <p class="section-note">
+            A growing toolkit for thoughtful, effective marketing.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Marketing & Strategy</h3>
+            <div class="skill-tags">
+              <span class="tag">Brand Strategy</span>
+              <span class="tag">Consumer Behavior</span>
+              <span class="tag">Market Research</span>
+              <span class="tag">Competitive Analysis</span>
+              <span class="tag">Digital Marketing</span>
+              <span class="tag">SEO Fundamentals</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Creative & Digital</h3>
+            <div class="skill-tags">
+              <span class="tag">Content Creation</span>
+              <span class="tag">Social Media</span>
+              <span class="tag">Visual Storytelling</span>
+              <span class="tag">Canva</span>
+              <span class="tag">Website Content</span>
+              <span class="tag">Copywriting</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Professional</h3>
+            <div class="skill-tags">
+              <span class="tag">Communication</span>
+              <span class="tag">Collaboration</span>
+              <span class="tag">Creative Problem-Solving</span>
+              <span class="tag">Customer Experience</span>
+              <span class="tag">Sales Promotion</span>
+              <span class="tag">Adaptability</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROJECTS -->
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Projects with purpose.</h2>
+          </div>
+          <p class="section-note">
+            Exploring how research, creativity, and strategy work together.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+
+          <article class="project-card">
+            <div class="project-cover cover-one">
+              <span class="cover-label">01 / Digital Marketing</span>
+              <div>
+                <div class="cover-title">Summer Fridays</div>
+                <div class="cover-subtitle">
+                  A fresh perspective on beauty e-commerce
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-type">Website Redesign & SEO</span>
+              <h3>Connecting with a younger audience</h3>
+              <p>
+                A website redesign concept for Summer Fridays focused on
+                consumers ages 18–24. The project explores trend-driven
+                content, a viral-products section, search-friendly product
+                descriptions, and stronger calls to action.
+              </p>
+              <div class="project-links">
+                <a class="text-link" href="https://github.com/"
+                   target="_blank" rel="noopener noreferrer">
+                  View Project ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+
+          <article class="project-card">
+            <div class="project-cover cover-two">
+              <span class="cover-label">02 / Business Strategy</span>
+              <div>
+                <div class="cover-title">Oura</div>
+                <div class="cover-subtitle">
+                  Understanding the wellness market
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-type">Business Model Analysis</span>
+              <h3>Deconstructing a wellness brand</h3>
+              <p>
+                An analysis of Oura's business model using the Business Model
+                Canvas framework, examining its value proposition, customer
+                segments, distribution channels, revenue streams, and
+                opportunities for growth.
+              </p>
+              <div class="project-links">
+                <a class="text-link" href="https://github.com/"
+                   target="_blank" rel="noopener noreferrer">
+                  View Project ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+
+          <article class="project-card">
+            <div class="project-cover cover-three">
+              <span class="cover-label">03 / Event Marketing</span>
+              <div>
+                <div class="cover-title">UnityChella</div>
+                <div class="cover-subtitle">
+                  Community, culture & connection
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-type">Campaign & Creative Strategy</span>
+              <h3>Building a campus experience</h3>
+              <p>
+                A Rutgers Black Student Union event marketing concept inspired
+                by music festivals. The project combines event branding,
+                promotional flyer design, interactive experiences, and
+                audience engagement to build excitement and community.
+              </p>
+              <div class="project-links">
+                <a class="text-link" href="https://github.com/"
+                   target="_blank" rel="noopener noreferrer">
+                  View Project ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+
+          <article class="project-card">
+            <div class="project-cover cover-four">
+              <span class="cover-label">04 / Consumer Insights</span>
+              <div>
+                <div class="cover-title">Consumer Behavior</div>
+                <div class="cover-subtitle">
+                  From customer insights to brand loyalty
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-type">Marketing Research</span>
+              <h3>Understanding brand loyalty</h3>
+              <p>
+                A consumer research project exploring why customers remain
+                loyal to beauty brands such as Summer Fridays, with a focus
+                on customer motivation, product perceptions, brand
+                experiences, and word-of-mouth recommendations.
+              </p>
+              <div class="project-links">
+                <a class="text-link" href="https://github.com/"
+                   target="_blank" rel="noopener noreferrer">
+                  View Project ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <div class="container">
+        <p class="eyebrow">Let's connect</p>
+        <h2>Let's create something meaningful.</h2>
+        <p>
+          I am excited to connect with marketing professionals, creative
+          teams, and brands looking for fresh perspectives and thoughtful
+          ideas.
+        </p>
+
+        <!-- Replace with your professional email -->
+        <a class="button" href="mailto:YOUR_EMAIL@example.com">
+          Email Me ↗
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Juline Arthur. All rights reserved.</span>
+      <span>Designed with purpose & creativity.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
